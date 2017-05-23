@@ -1,0 +1,14 @@
+<div ng-controller="FavesController as vm">
+
+  Favorites
+
+  <p><a href="#!/">Show all</a></p>
+
+  <div class="post" ng-repeat="item in vm.feed" ng-hide="item['favorite']===false">
+    <p>Fave or not: {{ item["favorite"] }}</p>
+    <p>Author: {{ item.data.author }}</p>
+    <p>Title: {{ item.data.title }}</p>
+    <p><img src="{{ item.data.thumbnail }}"></p>
+  </div>
+
+</div>

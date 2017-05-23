@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="redditApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Reddit Feed</title>
+    <script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/home_controller.js"></script>
+    <script src="controllers/faves_controller.js"></script>
+    <script src="routes.js"></script>
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
+
+  <body>
+    <div>
+      <div ng-view></div>
+    </div>
+  </body>
+
+</html>
