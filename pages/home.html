@@ -1,14 +1,14 @@
 <div ng-controller="HomeController as vm">
 
-  All items
+  <p>Show favorites only?<input type="checkbox" ng-model="vm.showFavorites" ng-change="vm.toggleFavorites()" /></p>
 
-  <p><a href="#!/favorites">Show favorites only</a></p>
-
-  <div class="post" ng-repeat="item in vm.feed">
-    <p>favorite? <input type="checkbox" ng-model="yes" ng-change="vm.toggle(item)" /></p>
-    <p>Author: {{ item.data.author }}</p>
-    <p>Title: {{ item.data.title }}</p>
-    <p><img src="{{ item.data.thumbnail }}"></p>
+  <div class="post" ng-repeat="item in vm.feed" >
+    <div ng-hide="vm.showFavorites && !item['favorite']" >
+      <p>favorite? <input type="checkbox" ng-model="item['favorite']" ng-change="vm.toggle(item)" /></p>
+      <p>Author: {{ item.data.author }}</p>
+      <p>Title: {{ item.data.title }}</p>
+      <p><img src="{{ item.data.thumbnail }}"></p>
+    </div>
   </div>
 
 </div>
