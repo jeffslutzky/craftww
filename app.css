@@ -1,5 +1,16 @@
 .post {
-  margin-top: 50px;
-  padding: 5px 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+  padding: 15px;
   border: 1px solid gray;
+}
+
+.header {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+p.author {
+  padding-left: 20px;
+  padding-top: 0px;
 }

@@ -1,13 +1,13 @@
 <div ng-controller="HomeController as vm">
 
-  <p>Show favorites only?<input type="checkbox" ng-model="vm.showFavorites" ng-change="vm.toggleFavorites()" /></p>
+  <p class="header">Show favorites only? <input type="checkbox" ng-model="vm.showFavorites" /></p>
 
-  <div class="post" ng-repeat="item in vm.feed" >
-    <div ng-hide="vm.showFavorites && !item['favorite']" >
-      <p>favorite? <input type="checkbox" ng-model="item['favorite']" ng-change="vm.toggle(item)" /></p>
-      <p>Author: {{ item.data.author }}</p>
-      <p>Title: {{ item.data.title }}</p>
+  <div class="row justify-content-md-center" ng-repeat="item in vm.feed" >
+    <div class="post col-sm-4" ng-hide="vm.showFavorites && !item['favorite']" >
+      <p>{{ item.data.title }}</p>
+      <p class="author">posted by {{ item.data.author }}</p>
       <p><img src="{{ item.data.thumbnail }}"></p>
+      <div class="input-group col-sm-2"><span class="input-group-addon">favorite? <input type="checkbox" ng-model="item['favorite']" /></span></div>
     </div>
   </div>
 
