@@ -1,6 +1,19 @@
 <div ng-controller="HomeController as vm">
 
+  <h1>Reddit Feed Reader</h1>
   <p class="header">Show favorites only? <input type="checkbox" ng-model="vm.showFavorites" /></p>
+
+    <div class="input-group col-md-3">
+      <form ng-submit="vm.loadNew()">
+        Search for another subreddit:
+        <input type="text" ng-model="vm.search" class="form-control" placeholder="Search..." />
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="submit">Go!</button>
+        </span>
+      </form>
+    </div>
+
+  <h4>Feed: {{ vm.plainURL }}</h4>
 
   <div class="row justify-content-md-center" ng-repeat="item in vm.feed" >
     <div class="post col-sm-4" ng-hide="vm.showFavorites && !item['favorite']" >

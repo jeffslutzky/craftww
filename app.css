@@ -1,8 +1,13 @@
+.container {
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
 .post {
   margin-top: 30px;
   margin-left: 10px;
   padding: 15px;
-  border: 1px solid gray;
+  border: 1px solid #D0D3D4;
 }
 
 .header {
@@ -11,6 +16,14 @@
 }
 
 p.author {
-  padding-left: 20px;
-  padding-top: 0px;
+  /*padding-left: 20px;*/
+  font-style: italic;
+}
+
+form {
+  margin: 20px 0px;
+}
+
+button {
+  margin: 5px;
 }

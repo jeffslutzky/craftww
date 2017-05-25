@@ -5,10 +5,12 @@
 
     var vm = this;
 
-    vm.url = "https://www.reddit.com/r/pics/top/.json";
+    vm.plainURL = "https://www.reddit.com/r/pics"
+
+    vm.search = "";
 
     vm.getFeed = function() {
-      $http.get(vm.url)
+      $http.get(vm.plainURL + "/top/.json")
         .then(function(response) {
           vm.feed = response.data.data.children;
         })
@@ -18,6 +20,11 @@
     };
 
     vm.getFeed();
+
+    vm.loadNew = function() {
+      vm.plainURL = "https://www.reddit.com/r/" + vm.search;
+      vm.getFeed();
+    };
 
   }
 
