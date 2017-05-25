@@ -24,6 +24,7 @@
     vm.loadNew = function() {
       vm.plainURL = "https://www.reddit.com/r/" + vm.search;
       vm.getFeed();
+      vm.search = "";
     };
 
   }
