@@ -19,8 +19,8 @@
     <div class="post col-sm-4" ng-hide="vm.showFavorites && !item['favorite']" >
       <p>{{ item.data.title }}</p>
       <p class="author">posted by {{ item.data.author }}</p>
-      <p ng-if="item.data.thumbnail != 'nsfw'"><img src="{{ item.data.thumbnail }}"></p>
       <p ng-if="item.data.thumbnail === 'nsfw'">[image is NSFW]</p>
+      <p ng-if="item.data.thumbnail !== 'nsfw'"><img ng-src="{{ item.data.thumbnail }}"></p>
       <div class="input-group col-sm-2"><span class="input-group-addon">favorite? <input type="checkbox" ng-model="item['favorite']" ng-change="vm.addFavorite(item)" /></span></div>
     </div>
   </div>
