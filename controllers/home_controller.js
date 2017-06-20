@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function HomeController($http, $resource) {
+  function HomeController($http, $resource, favoritesService) {
 
     var vm = this;
 
@@ -27,8 +27,14 @@
       vm.search = "";
     };
 
+    vm.addFavorite = function(item) {
+      console.log(item.data.id);
+      var id = item.data.id;
+      favoritesService.addFavorite(id);
+    };
+
   }
 
-  myApp.controller('HomeController', ['$http', '$resource', HomeController]);
+  myApp.controller('HomeController', ['$http', '$resource', 'favoritesService', HomeController]);
 
 }) ();
