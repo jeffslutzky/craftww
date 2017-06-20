@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function HomeController($http, $resource, favoritesService) {
+  function FavesController($http, $resource, favoritesService) {
 
     var vm = this;
 
@@ -34,6 +34,6 @@
 
   }
 
-  myApp.controller('HomeController', ['$http', '$resource', 'favoritesService', HomeController]);
+  myApp.controller('FavesController', ['$http', '$resource', 'favoritesService', HomeController]);
 
 }) ();

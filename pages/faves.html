@@ -1,0 +1,28 @@
+<div ng-controller="FavesController as vm">
+
+  <h1>Reddit Feed Reader</h1>
+  <p class="header"><a href="#!/">Show all</a></p>
+
+    <div class="input-group col-md-3">
+      <form ng-submit="vm.loadNew()">
+        Search for another subreddit:
+        <input type="text" ng-model="vm.search" class="form-control" placeholder="Search..." />
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="submit">Go!</button>
+        </span>
+      </form>
+    </div>
+
+  <h4>Feed: {{ vm.plainURL }}</h4>
+
+  <div class="row justify-content-md-center" ng-repeat="item in vm.feed" >
+    <div class="post col-sm-4" ng-hide="vm.showFavorites && !item['favorite']" >
+      <p>{{ item.data.title }}</p>
+      <p class="author">posted by {{ item.data.author }}</p>
+      <p ng-if="item.data.thumbnail === 'nsfw'">[image is NSFW]</p>
+      <p ng-if="item.data.thumbnail !== 'nsfw'"><img ng-src="{{ item.data.thumbnail }}"></p>
+      <div class="input-group col-sm-2"><span class="input-group-addon">favorite? <input type="checkbox" ng-model="item['favorite']" ng-change="vm.addRemoveFavorite(item)" /></span></div>
+    </div>
+  </div>
+
+</div>
